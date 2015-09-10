@@ -2,6 +2,7 @@
 
 class BinaryTree
 {
+public:
 	BinaryTree();
 	~BinaryTree();
 	BNode* InstructBinaryTree();

@@ -4,6 +4,11 @@
 BinaryTree::BinaryTree()
 {
 	IsRootNode = true;
+	binarytree = NULL;
+}
+
+BinaryTree::~BinaryTree()
+{
 }
 
 BNode* BinaryTree::InstructBinaryTree()
@@ -14,10 +19,15 @@ BNode* BinaryTree::InstructBinaryTree()
 	std::cin >> Input;
 	if (Input == 'q')
 	{
-		return 0;
+		return NULL;
 	}
 	else
 	{
+		if (IsRootNode == true)
+		{
+			binarytree = (BTree*)tmpNode;
+			IsRootNode = false;
+		}
 		tmpNode->Data = Input;
 		std::cout << "该结点是否具有左子树？(y or n)" << std::endl;
 		std::cin >> Input;
@@ -28,18 +38,18 @@ BNode* BinaryTree::InstructBinaryTree()
 		else
 		{
 			tmpNode->lchild = NULL;
-			std::cout << "该结点是否具有右子树？(y or n)" << std::endl;
-			std::cin >> Input;
-			if (Input == 'y')
-			{
-				tmpNode->rchild = InstructBinaryTree();
-			}
-			else
-			{
-				tmpNode->rchild = NULL;
-			}
+
+		}
+		std::cout << "该结点是否具有右子树？(y or n)" << std::endl;
+		std::cin >> Input;
+		if (Input == 'y')
+		{
+			tmpNode->rchild = InstructBinaryTree();
+		}
+		else
+		{
+			tmpNode->rchild = NULL;
 		}
 	}
-
-	if (IsRootNode == true)
+	return tmpNode;
 }
