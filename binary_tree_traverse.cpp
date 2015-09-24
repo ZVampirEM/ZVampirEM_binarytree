@@ -5,6 +5,7 @@ BinaryTree::BinaryTree()
 {
 	IsRootNode = true;
 	binarytree = NULL;
+	count = 0;
 }
 
 BinaryTree::~BinaryTree()
@@ -29,10 +30,11 @@ BNode* BinaryTree::InstructBinaryTree()
 			IsRootNode = false;
 		}
 		tmpNode->Data = Input;
-		std::cout << "该结点是否具有左子树？(y or n)" << std::endl;
+		std::cout << "该结点" << tmpNode->Data << "是否具有左子树？(y or n)" << std::endl;
 		std::cin >> Input;
 		if (Input == 'y')
 		{
+			count += 1;
 			tmpNode->lchild = InstructBinaryTree();
 		}
 		else
@@ -40,7 +42,7 @@ BNode* BinaryTree::InstructBinaryTree()
 			tmpNode->lchild = NULL;
 
 		}
-		std::cout << "该结点是否具有右子树？(y or n)" << std::endl;
+		std::cout << "该结点" << tmpNode->Data << "是否具有右子树？(y or n)" << std::endl;
 		std::cin >> Input;
 		if (Input == 'y')
 		{
@@ -53,3 +55,17 @@ BNode* BinaryTree::InstructBinaryTree()
 	}
 	return tmpNode;
 }
+
+void BinaryTree::ShowBinaryTree(BTree *btree)
+{    
+	if (btree == NULL)
+	{
+		std::cout << "需要输出的树为空" << std::endl;
+		return;
+	}
+
+	else
+	{
+		
+	}
+}   

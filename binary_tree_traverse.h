@@ -6,7 +6,7 @@ public:
 	BinaryTree();
 	~BinaryTree();
 	BNode* InstructBinaryTree();
-	void ShowBinaryTree();
+	void ShowBinaryTree(BTree *btree);
 	void PreOrderTraverse(BTree* bt);
 	void InOrderTraverse(BTree* bt);
 	void PostOrderTraverse(BTree* bt);
@@ -14,4 +14,5 @@ public:
 private:
 	BTree *binarytree;
 	bool IsRootNode;
+	int count;
 };
